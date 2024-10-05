@@ -1,21 +1,23 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'screens/location_input_screen.dart';
+import 'screens/map_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
-      home: LocationInputScreen(),
+      title: 'Location App',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LocationInputScreen(),
+        '/map': (context) => MapScreen(),
+      },
     );
   }
 }
-
